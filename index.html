@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报告防伪查询</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pdf-container {
+            display: none; /* 默认隐藏 */
+            margin-top: 20px;
+        }
+        .toggle-btn {
+            cursor: pointer;
+        }
+        .highlight {
+            color: rgb(112, 112, 243); /* 只让这个字段变蓝 */
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div>
+        <span class="toggle-btn" onclick="togglePDF()">点击查看详细报告 <span class="highlight">ZFLJ5497341</span></span>
+    </div>
+
+    <!-- PDF展示区域 -->
+    <div class="pdf-container" id="pdf-container">
+        <iframe src="./qiuzhuang.pdf" width="100%" height="800px"></iframe>
+    </div>
+
+    <script>
+        function togglePDF() {
+            const pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer.style.display === 'none' || pdfContainer.style.display === '') {
+                pdfContainer.style.display = 'block'; // 显示PDF
+            } else {
+                pdfContainer.style.display = 'none'; // 隐藏PDF
+            }
+        }
+    </script>
+</body>
+</html>
